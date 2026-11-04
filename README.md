@@ -33,7 +33,7 @@ Complete connection authorization in the host before calling tools. Add the incl
 
 This package uses the portable Agent Plugins format: root `plugin.json`, `mcp.json`, and `skills/`. A developer with access to custom MCP connections can add the live endpoint through ChatGPT's **Plugins → Add custom MCP server** flow and test the connection. Public directory installation becomes available only after submission, review, and publication.
 
-OpenAI's current packaging documentation adds OAuth metadata that the portable MCP 1.0.0 schema does not yet accept. The portable file stays schema-valid; `submission/mcp.openai.json` is the documented OpenAI submission variant. See [package notes](docs/package-notes.md) before uploading either archive. Actual Claude and ChatGPT tool/skill sessions remain unverified. Developer identity is verified, but an OpenAI portal error currently blocks upload; no successful upload, scan, or directory submission has occurred.
+OpenAI's current packaging documentation adds OAuth metadata that the portable MCP 1.0.0 schema does not yet accept. The portable file stays schema-valid; `submission/mcp.openai.json` is the documented OpenAI submission variant. See [package notes](docs/package-notes.md) before uploading either archive. Custom MCP workflows have been tested in Claude and ChatGPT with synthetic data; installation of the packaged skills remains unverified. Developer identity is verified, but an OpenAI portal error currently blocks upload; no successful upload, scan, or directory submission has occurred.
 
 ## Tools and workflows
 
@@ -60,7 +60,9 @@ Responses report coverage and freshness. Check `coverage.truncated`, `coverage.c
 
 ## Release checks
 
-Staging and production canaries passed the OAuth registration, PKCE, account consent, four-tool calls, refresh, revocation, and negative-access checks. The official MCP SDK client passed in legacy and pinned `2026-07-28` protocol modes. The unmodified Docker MCP Gateway initialized, listed the four tools, and successfully called each tool against isolated synthetic review data. That gateway test used a short-lived OAuth token; Docker CLI browser login and credential storage were not tested. Actual Claude and ChatGPT tool/skill sessions remain unverified. See [submission status](docs/submission-tracker.md) for review outcomes.
+Staging and production canaries passed the OAuth registration, PKCE, account consent, four-tool calls, refresh, revocation, and negative-access checks. The official MCP SDK client passed in legacy and pinned `2026-07-28` protocol modes. The unmodified Docker MCP Gateway initialized, listed the four tools, and successfully called each tool against isolated synthetic review data. That gateway test used a short-lived OAuth token; Docker CLI browser login and credential storage were not tested.
+
+Live Claude and ChatGPT custom MCP sessions completed OAuth and exercised review statistics, search, detail, pagination, and draft-only handoff with synthetic data. Claude's initial draft incorrectly claimed an internal handoff; an explicit instruction against unconfirmed actions corrected it and passed a fresh-session check. Human review remains necessary. Both test connections were revoked afterward. Packaged skill installation remains unverified, and these checks do not establish directory approval. See [submission status](docs/submission-tracker.md) for details.
 
 This repository contains connection metadata, skills, documentation, and a brand asset. It contains no backend source, customer review exports, or credentials. Package code and documentation are MIT licensed; ReviewBot names and artwork remain their owners' trademarks and are not licensed by MIT.
 
