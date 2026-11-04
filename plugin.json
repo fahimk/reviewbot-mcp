@@ -1,6 +1,6 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "reviewbot",
+  "name": "reviewbot-app-reviews",
   "version": "0.1.0",
   "description": "Read collected App Store and Google Play reviews, prepare feedback briefs, and draft grounded replies.",
   "author": {
@@ -20,7 +20,7 @@
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "ReviewBot",
+        "displayName": "ReviewBot App Reviews",
         "shortDescription": "Understand your app reviews",
         "longDescription": "Read App Store and Google Play reviews collected for apps in your connected ReviewBot account. Find feedback, inspect individual reviews, summarize rating statistics and recurring themes, and prepare reply drafts. Requires an existing eligible ReviewBot account. Queries use collection time, support windows up to 30 days, scan at most 500 records, and return bounded results with coverage and freshness information. Statistics describe the observed collected sample, not every store review. All tools are read-only; replies are drafts for you to review in ReviewBot.",
         "developerName": "ReviewBot",

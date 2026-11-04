@@ -1,5 +1,5 @@
 {
-  "name": "reviewbot",
+  "name": "reviewbot-app-reviews",
   "description": "ReviewBot app review tools and feedback workflows.",
   "owner": {
     "name": "ReviewBot",
@@ -7,7 +7,7 @@
   },
   "plugins": [
     {
-      "name": "reviewbot",
+      "name": "reviewbot-app-reviews",
       "source": "./",
       "description": "Read collected app reviews, prepare feedback briefs, and draft replies.",
       "version": "0.1.0"

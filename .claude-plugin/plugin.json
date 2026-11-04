@@ -1,6 +1,6 @@
 {
-  "name": "reviewbot",
-  "displayName": "ReviewBot",
+  "name": "reviewbot-app-reviews",
+  "displayName": "ReviewBot App Reviews",
   "version": "0.1.0",
   "description": "Read collected App Store and Google Play reviews, prepare weekly feedback briefs, and draft grounded replies.",
   "author": {
@@ -11,5 +11,11 @@
   "homepage": "https://reviewbot.io/",
   "privacyPolicyUrl": "https://reviewbot.io/privacy/",
   "license": "MIT",
-  "keywords": ["app-reviews", "customer-feedback", "app-store", "google-play", "mcp"]
+  "keywords": [
+    "app-reviews",
+    "customer-feedback",
+    "app-store",
+    "google-play",
+    "mcp"
+  ]
 }

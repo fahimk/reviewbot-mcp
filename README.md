@@ -1,4 +1,4 @@
-# ReviewBot MCP and plugins
+# ReviewBot App Reviews
 
 ReviewBot brings reviews collected from your monitored App Store and Google Play apps into an assistant. Search feedback, inspect individual reviews, summarize an observed review sample, and draft replies for your team to review.
 
@@ -25,7 +25,7 @@ claude plugin validate /absolute/path/to/reviewbot-mcp
 claude --plugin-dir /absolute/path/to/reviewbot-mcp
 ```
 
-Complete connection authorization in the host before calling tools. Add the included marketplace with `/plugin marketplace add fahimk/reviewbot-mcp`, followed by `/plugin install reviewbot@reviewbot`. The hosted endpoint must be live before you can connect.
+Complete connection authorization in the host before calling tools. Add the included marketplace with `/plugin marketplace add fahimk/reviewbot-mcp`, followed by `/plugin install reviewbot-app-reviews@reviewbot-app-reviews`. The hosted endpoint must be live before you can connect.
 
 ### ChatGPT and Codex
 

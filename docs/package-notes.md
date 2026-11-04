@@ -1,6 +1,6 @@
 # Package formats and validation
 
-The same two skills are shared by the portable and Claude formats.
+ReviewBot App Reviews uses the plugin identifier `reviewbot-app-reviews` in the portable and Claude formats. Both formats share the same two skills. The MCP connection key remains `reviewbot`, and the registry namespace remains `io.github.fahimk/reviewbot`.
 
 | File | Consumer |
 | --- | --- |
@@ -16,7 +16,7 @@ The same two skills are shared by the portable and Claude formats.
 
 As checked on 2026-11-04, [OpenAI's packaging documentation](https://developers.openai.com/plugins/build/plugins#use-automatic-oauth-client-registration) places OAuth configuration at `mcpServers.reviewbot.extensions.com.openai.auth`. The [portable MCP 1.0.0 schema](https://agent-plugins.org/schemas/1.0.0/mcp.schema.json) disallows per-server `extensions`. The primary `mcp.json` follows the portable schema. The separate OpenAI file follows the documented OpenAI OAuth format and must be checked by the actual upload/scan flow. It is not claimed to pass the portable schema.
 
-`python3 scripts/build_packages.py` produces two archives under `dist/`. The portable archive includes the canonical `mcp.json`; the OpenAI archive replaces that file with the submission variant. Both use an explicit allowlist and exclude validation environments, credentials, and customer data. The public submission variant is included for reproducibility. The OpenAI variant has no embedded secret and relies on server OAuth discovery and dynamic client registration. Confirm the live server advertises and supports that flow before submission.
+When a versioned release is available, download its archives from [GitHub Releases](https://github.com/fahimk/reviewbot-mcp/releases). The `reviewbot-app-reviews-VERSION-portable.zip` archive includes the canonical `mcp.json`; `reviewbot-app-reviews-VERSION-openai.zip` uses the OpenAI submission variant instead. The archives contain only plugin manifests, skills, documentation, and the icon; maintainer packaging utilities are not shipped. The public submission variant is included for reference. The OpenAI variant has no embedded secret and relies on server OAuth discovery and dynamic client registration. Confirm the live server advertises and supports that flow before submission.
 
 The OpenAI manifest intentionally omits reviewer credentials, reviewer-only instructions, a demo URL, and published identity IDs. Add a real reviewer-accessible demo and enter access details only in the secure dashboard. Do not fabricate them or put credentials in a package. The developer name and category must be confirmed against the selected verified identity and available dashboard categories.
 
