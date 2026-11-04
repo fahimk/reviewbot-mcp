@@ -4,12 +4,15 @@ Updated 2026-11-04. The production service is live. Status below distinguishes p
 
 | Channel | Status | Evidence | Next step |
 | --- | --- | --- | --- |
-| Public package repository | Public; 0.1.0 release artifacts prepared | [fahimk/reviewbot-mcp](https://github.com/fahimk/reviewbot-mcp) | Versioned downloads are provided through [GitHub Releases](https://github.com/fahimk/reviewbot-mcp/releases). This repository contains integration metadata, skills, and docs; no hosted backend source. |
+| Public package repository | **Published — v0.1.0** | [Release and archives](https://github.com/fahimk/reviewbot-mcp/releases/tag/v0.1.0) | Maintain release metadata and future versions. This repository contains integration metadata, skills, and docs; no hosted backend source. |
 | Official MCP Registry | **Active — 0.1.0** | [Published record](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.fahimk%2Freviewbot/versions/0.1.0), published 2026-11-04 | Keep metadata aligned with future server releases. |
 | Claude plugin directory | **Submitted — In Review** | [Submission portal](https://claude.ai/directory/manage/plugins/d6c5d38b-f5fe-41d6-ae4c-d6fad861a586) | Security scan passed with directory-policy warnings. A human reviewer is checking the submission; the requested publisher name, ReviewBot, also awaits human review. Submitted version 0.1.0 references commit `454fb1f`. The listing is not live, and no separate MCP connector approval is recorded here. |
 | Docker MCP catalog | **PR open — maintainer action required** | [docker/mcp-registry#6604](https://github.com/docker/mcp-registry/pull/6604) | Maintainers must approve fork CI execution and review the contribution. CI and security-review workflows are gated; no upstream jobs have run. The listing is not accepted or merged. |
 | OpenAI shared ChatGPT/Codex directory | **Attempted — blocked before upload** | Signed-in [developer dashboard](https://platform.openai.com/plugins) requested developer identity verification | Complete Individual or Business verification, then upload the prepared archive and run its scan/review. No archive upload or submission has occurred. |
 | Glama | Not submitted | [MCP directory](https://glama.ai/mcp/servers) → Add Server | Obtain account access and confirm eligibility for a hosted service with a thin public integration package. Do not describe the hosted backend as open source. |
+| PulseMCP | Submissions paused | [Submission page](https://www.pulsemcp.com/submit) | The directory says it will automatically ingest official MCP Registry entries when submissions resume. No separate ReviewBot submission was made. |
+| MCP.so | Paid route skipped | [Server submission](https://mcp.so/submit?type=server) | The observed submission route costs $39. No free route was observed and no payment was authorized or made. |
+| Smithery | Not submitted; no straightforward free route verified | [Platform update](https://smithery.ai/future) | Following the proxy, account, API, and CLI shutdown, a curated directory remains. Recheck for a suitable free submission route; no ReviewBot submission was made. |
 
 ## Verification evidence
 
