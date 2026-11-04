@@ -1,0 +1,14 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.fahimk/reviewbot",
+  "title": "ReviewBot",
+  "description": "Read collected App Store and Google Play reviews and bounded feedback statistics.",
+  "version": "0.1.0",
+  "websiteUrl": "https://reviewbot.io/",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.reviewbot.io/mcp"
+    }
+  ]
+}

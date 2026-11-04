@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "reviewbot": {
+      "type": "http",
+      "url": "https://api.reviewbot.io/mcp"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+.validation/
+dist/
+__pycache__/
+.DS_Store
+*.pyc
