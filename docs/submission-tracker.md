@@ -16,7 +16,7 @@ Updated 2026-11-04. The production service is live. Status below distinguishes p
 
 ## Verification evidence
 
-- Production MCP endpoint and [connection documentation](https://api.reviewbot.io/mcp/docs) are live. Backend and dashboard production rollouts completed.
+- The [ReviewBot MCP setup and workflow page](https://reviewbot.io/mcp/), production MCP endpoint, and [connection documentation](https://api.reviewbot.io/mcp/docs) are live. Backend, dashboard, and landing-page production rollouts completed.
 - Staging and production canaries passed dynamic client registration, PKCE, browser-cookie-bound Firebase account consent, scoped tool calls, refresh, revocation, and negative access cases.
 - The official MCP SDK client passed in legacy and pinned `2026-07-28` modes. Tests cover all four read-only tools and bounded inputs.
 - The unmodified official Docker MCP Gateway passed six checks: initialization, listing exactly the four supported tools, and one successful call to each tool. It used an isolated synthetic reviewer account and a short-lived OAuth token; the dedicated test connection was revoked afterward. Docker CLI browser login and credential storage were not tested.

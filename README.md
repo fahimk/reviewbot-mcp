@@ -2,6 +2,8 @@
 
 ReviewBot brings reviews collected from your monitored App Store and Google Play apps into an assistant. Search feedback, inspect individual reviews, summarize an observed review sample, and draft replies for your team to review.
 
+[Get started with ReviewBot MCP](https://reviewbot.io/mcp/) for setup steps, example workflows, and account requirements.
+
 The hosted service is live, and version **0.1.0** is active in the [official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.fahimk%2Freviewbot/versions/0.1.0). Claude and Docker directory submissions are pending review. See the [submission tracker](docs/submission-tracker.md) for availability in each directory.
 
 ## Connect
