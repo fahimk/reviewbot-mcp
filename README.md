@@ -2,7 +2,7 @@
 
 ReviewBot brings reviews collected from your monitored App Store and Google Play apps into an assistant. Search feedback, inspect individual reviews, summarize an observed review sample, and draft replies for your team to review.
 
-Version **0.1.0** is a release candidate. Hosted production verification and directory submissions are in progress. See the [submission tracker](docs/submission-tracker.md) for current status before connecting.
+The hosted service is live, and version **0.1.0** is active in the [official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.fahimk%2Freviewbot/versions/0.1.0). Claude and Docker directory submissions are pending review. See the [submission tracker](docs/submission-tracker.md) for availability in each directory.
 
 ## Connect
 
@@ -10,7 +10,7 @@ Version **0.1.0** is a release candidate. Hosted production verification and dir
 - Transport: Streamable HTTP
 - Authentication: OAuth through ReviewBot; use the client's connection flow.
 - Account: an existing eligible paid or trial ReviewBot account with monitored App Store or Google Play apps.
-- Planned server documentation: `https://api.reviewbot.io/mcp/docs`
+- Server documentation: [Connection guide](https://api.reviewbot.io/mcp/docs)
 
 In a client that supports remote OAuth MCP servers, add the URL above and complete ReviewBot authorization. Never paste passwords, access tokens, or client secrets into a conversation or this repository. Account and organization settings may control which custom connectors can be added.
 
@@ -25,13 +25,13 @@ claude plugin validate /absolute/path/to/reviewbot-mcp
 claude --plugin-dir /absolute/path/to/reviewbot-mcp
 ```
 
-Complete connection authorization in the host before calling tools. Add the included marketplace with `/plugin marketplace add fahimk/reviewbot-mcp`, followed by `/plugin install reviewbot-app-reviews@reviewbot-app-reviews`. The hosted endpoint must be live before you can connect.
+Complete connection authorization in the host before calling tools. Add the included marketplace with `/plugin marketplace add fahimk/reviewbot-mcp`, followed by `/plugin install reviewbot-app-reviews@reviewbot-app-reviews`. Complete the ReviewBot OAuth flow to connect the live endpoint.
 
 ### ChatGPT and Codex
 
-This package uses the portable Agent Plugins format: root `plugin.json`, `mcp.json`, and `skills/`. Once the endpoint is deployed, a developer can add it through ChatGPT's **Plugins → Add custom MCP server** flow and test the connection. Public directory installation becomes available only after submission, review, and publication.
+This package uses the portable Agent Plugins format: root `plugin.json`, `mcp.json`, and `skills/`. A developer with access to custom MCP connections can add the live endpoint through ChatGPT's **Plugins → Add custom MCP server** flow and test the connection. Public directory installation becomes available only after submission, review, and publication.
 
-OpenAI's current packaging documentation adds OAuth metadata that the portable MCP 1.0.0 schema does not yet accept. The portable file stays schema-valid; `submission/mcp.openai.json` is the documented OpenAI submission variant. See [package notes](docs/package-notes.md) before uploading either archive. Neither format has yet been tested in the actual Claude or ChatGPT client.
+OpenAI's current packaging documentation adds OAuth metadata that the portable MCP 1.0.0 schema does not yet accept. The portable file stays schema-valid; `submission/mcp.openai.json` is the documented OpenAI submission variant. See [package notes](docs/package-notes.md) before uploading either archive. Actual Claude and ChatGPT tool/skill sessions remain unverified. The OpenAI directory upload is currently blocked by developer identity verification; the archive has not been uploaded.
 
 ## Tools and workflows
 
@@ -58,7 +58,7 @@ Responses report coverage and freshness. Check `coverage.truncated`, `coverage.c
 
 ## Release checks
 
-The server implementation has passed interoperability checks with the official MCP SDK client in legacy and pinned `2026-07-28` protocol modes, including the four tools and bounded inputs. This is not evidence of successful OAuth or tool use in an actual Claude or ChatGPT session. Those host tests, live endpoint verification, and directory review remain pending. Track them in [submission status](docs/submission-tracker.md).
+Staging and production canaries passed the OAuth registration, PKCE, account consent, four-tool calls, refresh, revocation, and negative-access checks. The official MCP SDK client passed in legacy and pinned `2026-07-28` protocol modes. The unmodified Docker MCP Gateway initialized, listed the four tools, and successfully called each tool against isolated synthetic review data. That gateway test used a short-lived OAuth token; Docker CLI browser login and credential storage were not tested. Actual Claude and ChatGPT tool/skill sessions remain unverified. See [submission status](docs/submission-tracker.md) for review outcomes.
 
 This repository contains connection metadata, skills, documentation, and a brand asset. It contains no backend source, customer review exports, or credentials. Package code and documentation are MIT licensed; ReviewBot names and artwork remain their owners' trademarks and are not licensed by MIT.
 

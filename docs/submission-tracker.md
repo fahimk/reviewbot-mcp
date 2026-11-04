@@ -1,40 +1,38 @@
 # Submission tracker
 
-Updated 2026-11-04. The public repository is being released; directory submissions are pending. A prepared manifest, successful validation, or accessible submission form is not an accepted listing.
+Updated 2026-11-04. The production service is live. Status below distinguishes published registry metadata, submitted listings, and attempts blocked before upload. Directory approval is not implied by a validator or interoperability test.
 
-| Channel | Status | Actionable path | Remaining prerequisites |
+| Channel | Status | Evidence | Next step |
 | --- | --- | --- | --- |
-| Public package repository | Created | [fahimk/reviewbot-mcp](https://github.com/fahimk/reviewbot-mcp) | Versioned release follows hosted verification. The repository contains integration metadata, not hosted backend source. |
-| Official MCP Registry | Not submitted | `mcp-publisher login github`, then `mcp-publisher publish` from this directory when ready | Publicly reachable remote endpoint, working OAuth discovery, live smoke test, verified `fahimk` namespace, and final `server.json`. No npm package is needed for this remote-only entry. Registry remains in preview. |
-| Claude connector directory | Not submitted | [Developer portal](https://claude.ai/directory/manage) → new MCP connector | Add and successfully test the custom connector, complete its connector submission and requested review materials. Verify OAuth, read-only annotations, links, and accessible test data. |
-| Claude plugin directory | Not submitted | [Developer portal](https://claude.ai/directory/manage) → new plugin from GitHub | Connect an authorized GitHub account, provide the plugin repository, pass validation/review, and make it public before listing publication. The remote MCP service also needs its connector submission. |
-| OpenAI shared ChatGPT/Codex directory | Not submitted | [Developer dashboard](https://platform.openai.com/plugins) → plugin upload and review | Select a verified developer identity, test the custom MCP connection, scan the OpenAI archive, resolve any auth/schema issue, supply a real demo, and enter reviewer access only in the secure portal. Run all eight cases in the actual host. |
-| Glama | Not submitted | [MCP servers](https://glama.ai/mcp/servers) → Add Server | Sign-in/account access is needed. Verify eligibility for a hosted service whose public repository is only an integration package; do not call the proprietary backend open source. Provide the final URL/repository only when live. |
+| Public package repository | Public; 0.1.0 release artifacts prepared | [fahimk/reviewbot-mcp](https://github.com/fahimk/reviewbot-mcp) | Versioned downloads are provided through [GitHub Releases](https://github.com/fahimk/reviewbot-mcp/releases). This repository contains integration metadata, skills, and docs; no hosted backend source. |
+| Official MCP Registry | **Active — 0.1.0** | [Published record](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.fahimk%2Freviewbot/versions/0.1.0), published 2026-11-04 | Keep metadata aligned with future server releases. |
+| Claude plugin directory | **Submitted — In Review** | [Submission portal](https://claude.ai/directory/manage/plugins/d6c5d38b-f5fe-41d6-ae4c-d6fad861a586) | Security scan passed with directory-policy warnings. A human reviewer is checking the submission; the requested publisher name, ReviewBot, also awaits human review. Submitted version 0.1.0 references commit `454fb1f`. The listing is not live, and no separate MCP connector approval is recorded here. |
+| Docker MCP catalog | **PR open — maintainer action required** | [docker/mcp-registry#6604](https://github.com/docker/mcp-registry/pull/6604) | Maintainers must approve fork CI execution and review the contribution. CI and security-review workflows are gated; no upstream jobs have run. The listing is not accepted or merged. |
+| OpenAI shared ChatGPT/Codex directory | **Attempted — blocked before upload** | Signed-in [developer dashboard](https://platform.openai.com/plugins) requested developer identity verification | Complete Individual or Business verification, then upload the prepared archive and run its scan/review. No archive upload or submission has occurred. |
+| Glama | Not submitted | [MCP directory](https://glama.ai/mcp/servers) → Add Server | Obtain account access and confirm eligibility for a hosted service with a thin public integration package. Do not describe the hosted backend as open source. |
 
-## Readiness evidence
+## Verification evidence
 
-- Portable/Claude/registry package checks: recorded separately by the local validator, not directory approval.
-- Official MCP SDK client interoperability: backend checks passed in legacy and pinned `2026-07-28` modes for the four tools and bounded inputs.
-- Public endpoint and OAuth discovery after deployment: pending.
-- Actual Claude OAuth connection and tool/skill scenarios: pending.
-- Actual ChatGPT OAuth connection and tool/skill scenarios: pending.
-- Reviewer-accessible demo recording: pending.
-- Secure reviewer account/access details: pending; never store them here.
-- Publication/approval URLs or registry receipts: none.
+- Production MCP endpoint and [connection documentation](https://api.reviewbot.io/mcp/docs) are live. Backend and dashboard production rollouts completed.
+- Staging and production canaries passed dynamic client registration, PKCE, browser-cookie-bound Firebase account consent, scoped tool calls, refresh, revocation, and negative access cases.
+- The official MCP SDK client passed in legacy and pinned `2026-07-28` modes. Tests cover all four read-only tools and bounded inputs.
+- The unmodified official Docker MCP Gateway passed six checks: initialization, listing exactly the four supported tools, and one successful call to each tool. It used an isolated synthetic reviewer account and a short-lived OAuth token; the dedicated test connection was revoked afterward. Docker CLI browser login and credential storage were not tested.
+- Portable manifests, the registry entry, both skills, local Claude package validation, and archive integrity checks passed. These results do not replace directory review.
+- Actual Claude and ChatGPT tool/skill sessions remain unverified. Claude's security scan passed and the submission is in human review; neither establishes end-user host compatibility.
+- A dedicated non-admin reviewer account contains isolated synthetic sample data. Its credentials are kept outside this repository and all release archives.
+- OpenAI portal scan and reviewer demo/access review remain pending because developer identity verification blocks upload.
 
-## Registry preparation
+## Metadata and distribution
 
-The [official quickstart](https://modelcontextprotocol.io/registry/quickstart) documents `mcp-publisher` installation through Homebrew or official release binaries. The latest release inspected on 2026-11-04 was [v1.8.7](https://github.com/modelcontextprotocol/registry/releases/tag/v1.8.7). A safe local preparation path is a version-pinned official binary, verified against its published SHA-256, extracted into a task-local tools directory rather than installed globally. Checking `--help` is not authentication or publication.
+The official registry hosts discovery metadata for `io.github.fahimk/reviewbot`; it does not host the service or manage payments. The remote URL uses Streamable HTTP and ReviewBot OAuth. There is no npm runtime package or new billing integration.
 
-Authenticate with the intended GitHub account using the [documented device flow](https://modelcontextprotocol.io/registry/authentication). It controls the `io.github.fahimk/` namespace. Keep generated tokens and authentication files outside the public package. Do not rerun initialization over the prepared `server.json`. Inspect the publisher's current help and validation output before the actual publish step; stop if it would overwrite a conflicting existing identity or version.
+The package identifier is `reviewbot-app-reviews`, with display name **ReviewBot App Reviews**. Both skills use the same four read-only tools: `list_apps`, `search_reviews`, `get_review`, and `get_review_stats`. Queries cover collected App Store and Google Play reviews, with a maximum 30-day collection window, at most 50 results per search page, and a 500-record scan bound per query. Reply workflows produce drafts only.
 
-The registry hosts discovery metadata, not the hosted service or its payments. [Remote entries](https://modelcontextprotocol.io/registry/remote-servers) require a publicly accessible URL. A server may require OAuth for account data; it must still expose the discovery/authorization flow required by its clients. This package intentionally has no registry `repository` claim for unpublished backend source.
+No paid directory placement has been purchased. No reviewer password, token, customer export, or private deployment artifact is included in this package.
 
 ## Submission references
 
-- [Claude plugin submission](https://claude.com/docs/plugins/submit): repository access, validation, review, and publication are separate steps.
-- [OpenAI submission](https://developers.openai.com/plugins/deploy/submission): exact five positive/three negative MCP cases and a real demo are review requirements; upload alone is insufficient.
-- [OpenAI packaging](https://developers.openai.com/plugins/build/plugins): portable format and OAuth metadata.
-- [Glama MCP directory](https://glama.ai/mcp/servers): Add Server is the observed entry point; account access and fit still need confirmation.
-
-No paid listing, account creation, star, directory submission, or public announcement is part of this prepared package.
+- [Claude plugin submission](https://claude.com/docs/plugins/submit): validation, review, and publication are separate steps.
+- [OpenAI submission](https://developers.openai.com/plugins/deploy/submission): identity verification and MCP review materials are required before publication.
+- [OpenAI packaging](https://developers.openai.com/plugins/build/plugins): portable manifests and the documented OAuth extension.
+- [Official MCP remote entries](https://modelcontextprotocol.io/registry/remote-servers): registry metadata for hosted servers.
