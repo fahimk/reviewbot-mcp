@@ -33,7 +33,7 @@ Complete connection authorization in the host before calling tools. Add the incl
 
 This package uses the portable Agent Plugins format: root `plugin.json`, `mcp.json`, and `skills/`. A developer with access to custom MCP connections can add the live endpoint through ChatGPT's **Plugins → Add custom MCP server** flow and test the connection. Public directory installation becomes available only after submission, review, and publication.
 
-OpenAI's current packaging documentation adds OAuth metadata that the portable MCP 1.0.0 schema does not yet accept. The portable file stays schema-valid; `submission/mcp.openai.json` is the documented OpenAI submission variant. See [package notes](docs/package-notes.md) before uploading either archive. Actual Claude and ChatGPT tool/skill sessions remain unverified. The OpenAI directory upload is currently blocked by developer identity verification; the archive has not been uploaded.
+OpenAI's current packaging documentation adds OAuth metadata that the portable MCP 1.0.0 schema does not yet accept. The portable file stays schema-valid; `submission/mcp.openai.json` is the documented OpenAI submission variant. See [package notes](docs/package-notes.md) before uploading either archive. Actual Claude and ChatGPT tool/skill sessions remain unverified. Developer identity is verified, but an OpenAI portal error currently blocks upload; no successful upload, scan, or directory submission has occurred.
 
 ## Tools and workflows
 
