@@ -1,6 +1,6 @@
 # Submission tracker
 
-Updated 2026-11-04. The production service is live. Status below distinguishes published registry metadata, submitted listings, and attempts blocked before upload. Directory approval is not implied by a validator or interoperability test.
+Updated 2026-11-09. The production service is live. Status below distinguishes published registry metadata, submitted listings, and prepared channels. Directory approval is not implied by a validator or interoperability test.
 
 | Channel | Status | Evidence | Next step |
 | --- | --- | --- | --- |
@@ -8,8 +8,9 @@ Updated 2026-11-04. The production service is live. Status below distinguishes p
 | Official MCP Registry | **Active — 0.1.0** | [Published record](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.fahimk%2Freviewbot/versions/0.1.0), published 2026-11-04 | Keep metadata aligned with future server releases. |
 | Claude plugin directory | **Submitted — In Review** | [Submission portal](https://claude.ai/directory/manage/plugins/d6c5d38b-f5fe-41d6-ae4c-d6fad861a586) | Security scan passed with directory-policy warnings. A human reviewer is checking the submission; the requested publisher name, ReviewBot, also awaits human review. Submitted version 0.1.0 references commit `454fb1f`. The listing is not live, and no separate MCP connector approval is recorded here. |
 | Docker MCP catalog | **PR open — maintainer action required** | [docker/mcp-registry#6604](https://github.com/docker/mcp-registry/pull/6604) | Maintainers must approve fork CI execution and review the contribution. CI and security-review workflows are gated; no upstream jobs have run. The listing is not accepted or merged. |
-| OpenAI shared ChatGPT/Codex directory | **Identity verified — upload blocked by portal error** | On 2026-11-04, identity showed Verified in the signed-in [developer dashboard](https://platform.openai.com/plugins). Three upload attempts, including a fresh page load, returned `Invalid URL`. | Resolve the portal upload error, then upload the prepared archive and run its scan/review. No successful upload, scan, or directory submission has occurred. |
-| Glama | Not submitted | [MCP directory](https://glama.ai/mcp/servers) → Add Server | Obtain account access and confirm eligibility for a hosted service with a thin public integration package. Do not describe the hosted backend as open source. |
+| OpenAI shared ChatGPT/Codex directory | **Submitted — In Review** | On 2026-11-09, the original version 0.1.0 OpenAI archive uploaded successfully and was submitted through the [developer dashboard](https://platform.openai.com/plugins). | Await review feedback. The earlier `Invalid URL` blocker is resolved; no public listing is claimed. |
+| Cursor Marketplace | Package guidance prepared; not submitted | [Publisher form](https://cursor.com/marketplace/publish), [submission handoff](cursor-glama-submission.md) | Test the existing portable package in Cursor, complete OAuth using isolated synthetic data, then submit the public repository. |
+| Glama | Hosted-endpoint listing prepared; not submitted | [Connectors](https://glama.ai/mcp/connectors) → Add Server → Hosted endpoint, [submission handoff](cursor-glama-submission.md) | Complete account access, ownership and a dedicated OAuth test profile. Only healthy connectors are indexed. Do not describe the hosted backend as open source. |
 | PulseMCP | Submissions paused | [Submission page](https://www.pulsemcp.com/submit) | The directory says it will automatically ingest official MCP Registry entries when submissions resume. No separate ReviewBot submission was made. |
 | MCP.so | Paid route skipped | [Server submission](https://mcp.so/submit?type=server) | The observed submission route costs $39. No free route was observed and no payment was authorized or made. |
 | Smithery | Not submitted; no straightforward free route verified | [Platform update](https://smithery.ai/future) | Following the proxy, account, API, and CLI shutdown, a curated directory remains. Recheck for a suitable free submission route; no ReviewBot submission was made. |
@@ -25,7 +26,7 @@ Updated 2026-11-04. The production service is live. Status below distinguishes p
 - ChatGPT's brief and draft passed; transient response-display errors resolved after reloading the response. Claude's initial draft falsely claimed an internal handoff. An explicit instruction against unconfirmed actions corrected it and passed a fresh-session starter-prompt test. Human review remains required; this is observed sample behavior, not an output-quality guarantee.
 - Both live-host test grants were revoked through ReviewBot, which then showed no connected AI apps. The isolated synthetic directory-reviewer account was retained. Packaged skill installation remains unverified; custom-connection tests and Claude's security scan do not establish directory approval.
 - A dedicated non-admin reviewer account contains isolated synthetic sample data. Its credentials are kept outside this repository and all release archives.
-- OpenAI developer identity is verified. Portal scan and reviewer demo/access review remain pending because the upload flow returns `Invalid URL`.
+- OpenAI developer identity is verified. The original version 0.1.0 archive uploaded successfully and the listing entered review on 2026-11-09. Public availability remains pending.
 
 ## Metadata and distribution
 

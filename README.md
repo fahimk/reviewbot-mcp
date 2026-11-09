@@ -4,7 +4,7 @@ ReviewBot brings reviews collected from your monitored App Store and Google Play
 
 [Get started with ReviewBot MCP](https://reviewbot.io/mcp/) for setup steps, example workflows, and account requirements.
 
-The hosted service is live, and version **0.1.0** is active in the [official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.fahimk%2Freviewbot/versions/0.1.0). Claude and Docker directory submissions are pending review. See the [submission tracker](docs/submission-tracker.md) for availability in each directory.
+The hosted service is live, and version **0.1.0** is active in the [official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.fahimk%2Freviewbot/versions/0.1.0). OpenAI and Claude directory submissions are in review; the Docker catalog contribution remains open. See the [submission tracker](docs/submission-tracker.md) for availability in each directory.
 
 ## Connect
 
@@ -33,7 +33,27 @@ Complete connection authorization in the host before calling tools. Add the incl
 
 This package uses the portable Agent Plugins format: root `plugin.json`, `mcp.json`, and `skills/`. A developer with access to custom MCP connections can add the live endpoint through ChatGPT's **Plugins → Add custom MCP server** flow and test the connection. Public directory installation becomes available only after submission, review, and publication.
 
-OpenAI's current packaging documentation adds OAuth metadata that the portable MCP 1.0.0 schema does not yet accept. The portable file stays schema-valid; `submission/mcp.openai.json` is the documented OpenAI submission variant. See [package notes](docs/package-notes.md) before uploading either archive. Custom MCP workflows have been tested in Claude and ChatGPT with synthetic data; installation of the packaged skills remains unverified. Developer identity is verified, but an OpenAI portal error currently blocks upload; no successful upload, scan, or directory submission has occurred.
+OpenAI's packaging documentation adds OAuth metadata that the portable MCP 1.0.0 schema does not accept. The portable file stays schema-valid; `submission/mcp.openai.json` is the OpenAI submission variant. See [package notes](docs/package-notes.md) before uploading either archive. Custom MCP workflows have been tested in Claude and ChatGPT with synthetic data; installation of the packaged skills remains unverified. The original version 0.1.0 OpenAI archive was successfully uploaded and submitted on 2026-11-09. The listing is in review and is not publicly available.
+
+### Cursor
+
+Cursor supports the [Agent Plugins format](https://cursor.com/docs/plugins) used by this repository. The existing root `plugin.json`, `mcp.json`, and `skills/` provide the remote connection and both review workflows; no Cursor-specific manifest is required.
+
+For a direct MCP connection, merge this entry into the `mcpServers` object in your existing Cursor MCP configuration. Preserve any other servers:
+
+```json
+{
+  "mcpServers": {
+    "reviewbot": {
+      "url": "https://api.reviewbot.io/mcp"
+    }
+  }
+}
+```
+
+Complete ReviewBot OAuth in Cursor, then ask which apps are accessible. A direct MCP connection adds tools only. To test the bundled skills as a local plugin, copy this repository's package files into `~/.cursor/plugins/local/reviewbot-app-reviews`, reload Cursor, and check **Customize** for the server and both skills. Local plugin imports must be permitted by your organization's settings. Follow Cursor's [local testing guide](https://cursor.com/docs/plugins#test-plugins-locally); a symlink pointing outside its local plugin folder is not supported.
+
+Cursor host testing and Marketplace submission are pending. Do not interpret package compatibility as a published listing or a completed OAuth test. Maintainers can use the [Cursor and Glama submission handoff](docs/cursor-glama-submission.md).
 
 ## Tools and workflows
 

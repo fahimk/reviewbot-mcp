@@ -4,8 +4,8 @@ ReviewBot App Reviews uses the plugin identifier `reviewbot-app-reviews` in the 
 
 | File | Consumer |
 | --- | --- |
-| `plugin.json` | Portable Agent Plugins identity and OpenAI listing/review metadata. |
-| `mcp.json` | Canonical Agent Plugins 1.0.0 remote connection. |
+| `plugin.json` | Portable Agent Plugins identity, accepted by Cursor, with OpenAI listing/review metadata. |
+| `mcp.json` | Canonical Agent Plugins 1.0.0 remote connection, including Cursor's portable-plugin path. |
 | `.claude-plugin/plugin.json` | Claude plugin identity. |
 | `.claude-plugin/marketplace.json` | Single-plugin Claude marketplace from the public repository. |
 | `.mcp.json` | Claude HTTP connection configuration. |
@@ -14,11 +14,17 @@ ReviewBot App Reviews uses the plugin identifier `reviewbot-app-reviews` in the 
 
 ## OpenAI auth metadata difference
 
-As checked on 2026-11-04, [OpenAI's packaging documentation](https://developers.openai.com/plugins/build/plugins#use-automatic-oauth-client-registration) places OAuth configuration at `mcpServers.reviewbot.extensions.com.openai.auth`. The [portable MCP 1.0.0 schema](https://agent-plugins.org/schemas/1.0.0/mcp.schema.json) disallows per-server `extensions`. The primary `mcp.json` follows the portable schema. The separate OpenAI file follows the documented OpenAI OAuth format and must be checked by the actual upload/scan flow. Developer identity now shows Verified, but three upload attempts, including one after a fresh page load, failed with the portal error `Invalid URL`. No successful upload, scan, or directory submission has occurred. This variant is not claimed to pass the portable schema or the OpenAI portal scan.
+As checked on 2026-11-04, [OpenAI's packaging documentation](https://developers.openai.com/plugins/build/plugins#use-automatic-oauth-client-registration) places OAuth configuration at `mcpServers.reviewbot.extensions.com.openai.auth`. The [portable MCP 1.0.0 schema](https://agent-plugins.org/schemas/1.0.0/mcp.schema.json) disallows per-server `extensions`. The primary `mcp.json` follows the portable schema. The separate OpenAI file follows the documented OpenAI OAuth format. On 2026-11-09, the original version 0.1.0 OpenAI archive uploaded successfully and the listing was submitted for review. This resolves the earlier `Invalid URL` upload blocker; it does not imply directory approval or portable-schema compatibility for the OpenAI variant.
 
 Download versioned archives from [GitHub Releases](https://github.com/fahimk/reviewbot-mcp/releases). The `reviewbot-app-reviews-VERSION-portable.zip` archive includes the canonical `mcp.json`; `reviewbot-app-reviews-VERSION-openai.zip` uses the OpenAI submission variant instead. The archives contain only plugin manifests, skills, documentation, and the icon; maintainer packaging utilities are not shipped. The public submission variant is included for reference. The OpenAI variant has no embedded secret and relies on server OAuth discovery and dynamic client registration. The live production service passed that OAuth flow in the synthetic canary.
 
-The OpenAI manifest intentionally omits reviewer credentials, reviewer-only instructions, a demo URL, and published identity IDs. Add a real reviewer-accessible demo and enter access details only in the secure dashboard. Do not fabricate them or put credentials in a package. The developer name and category must be confirmed against the selected verified identity and available dashboard categories.
+The OpenAI manifest intentionally omits reviewer credentials, reviewer-only instructions, a demo URL, and published identity IDs. Review materials and access details belong in the secure submission dashboard, not in a package or this repository.
+
+## Cursor and Glama
+
+Cursor accepts the existing portable package. This documentation update does not modify its manifests, skills, version 0.1.0 release tag, or published archives. Cursor-specific components are unnecessary for these two skills and one remote server. Actual Cursor import and OAuth behavior still need host testing; see the [submission handoff](cursor-glama-submission.md).
+
+Glama's hosted-endpoint connector route points to the existing service. It does not require a runtime package or imply that the hosted backend is open source. Its authenticated test profile is separate from public listing metadata.
 
 ## Checks
 
