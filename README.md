@@ -4,6 +4,8 @@ ReviewBot brings reviews collected from your monitored App Store and Google Play
 
 [Get started with ReviewBot MCP](https://reviewbot.io/mcp/) for setup steps, example workflows, and account requirements.
 
+New to ReviewBot? [Create an account](https://app.reviewbot.io/auth/sign_up?workflow=mcp) and add the App Store or Google Play apps you want to monitor. MCP access requires an eligible paid or trial account.
+
 The hosted service is live, and version **0.1.0** is active in the [official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.fahimk%2Freviewbot/versions/0.1.0). OpenAI and Claude directory submissions are in review; the Docker catalog contribution remains open. See the [submission tracker](docs/submission-tracker.md) for availability in each directory.
 
 ## Connect
