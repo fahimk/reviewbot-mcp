@@ -10,6 +10,7 @@ ReviewBot App Reviews uses the plugin identifier `reviewbot-app-reviews` in the 
 | `.claude-plugin/marketplace.json` | Single-plugin Claude marketplace from the public repository. |
 | `.mcp.json` | Claude HTTP connection configuration. |
 | `server.json` | Official MCP Registry remote entry, active at version 0.1.0. |
+| `lhm.plugin.json` | Owner-declared LobeHub listing metadata and the four public tool definitions. |
 | `submission/mcp.openai.json` | OpenAI submission variant with discovery-based OAuth DCR metadata. |
 
 ## OpenAI auth metadata difference
@@ -25,6 +26,12 @@ The OpenAI manifest intentionally omits reviewer credentials, reviewer-only inst
 Cursor supports the existing portable package format. This documentation update does not modify its manifests, skills, version 0.1.0 release tag, or published archives. Cursor-specific components are unnecessary for these two skills and one remote server. Actual Cursor import and OAuth behavior still need host testing, and Marketplace commercial eligibility needs clarification before submission; see the [submission handoff](cursor-glama-submission.md).
 
 Glama has imported the official registry entry into a [public, searchable connector listing](https://glama.ai/mcp/connectors/io.github.fahimk/reviewbot). Ownership is verified. The dedicated synthetic OAuth test profile is authenticated, and Glama's Test Connection check reported Healthy on 2026-11-09 at 18:01 UTC. The public listing shows Healthy and all four expected tools. The isolated profile is retained for ongoing health checks; it contains no customer data. No manual duplicate submission is needed. The listing points to the existing hosted service and does not imply that its backend is open source.
+
+## LobeHub
+
+The maintained [`lhm.plugin.json`](../lhm.plugin.json) is ReviewBot's owner declaration for LobeHub, following its [manifest reference](https://market.lobehub.com/s/publish-mcp/references/manifest). It declares the hosted endpoint and the four read-only tool definitions; OAuth and an eligible paid or trial ReviewBot account are required. The assistant can draft replies for human review, but these tools cannot publish them. The manifest is listing metadata, not a backend implementation or a packaged skill installer.
+
+As of 2026-11-09, publication and end-to-end use in LobeHub have not been verified. A manifest declaration or a marketplace validation badge does not establish a completed host OAuth/tool test. This addition leaves the version 0.1.0 release tag and published archives unchanged.
 
 ## Repository transfer
 
