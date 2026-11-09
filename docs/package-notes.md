@@ -24,7 +24,7 @@ The OpenAI manifest intentionally omits reviewer credentials, reviewer-only inst
 
 Cursor supports the existing portable package format. This documentation update does not modify its manifests, skills, version 0.1.0 release tag, or published archives. Cursor-specific components are unnecessary for these two skills and one remote server. Actual Cursor import and OAuth behavior still need host testing, and Marketplace commercial eligibility needs clarification before submission; see the [submission handoff](cursor-glama-submission.md).
 
-Glama has imported the official registry entry into a [public, searchable connector listing](https://glama.ai/mcp/connectors/io.github.fahimk/reviewbot). Ownership is verified. Live callback compatibility passes and the flow reaches ReviewBot's synthetic-account consent screen. The dedicated synthetic OAuth test profile remains to be completed; authenticated health verification is pending. Earlier checks reported unauthorized access. No manual duplicate submission is needed. The listing points to the existing hosted service and does not imply that its backend is open source.
+Glama has imported the official registry entry into a [public, searchable connector listing](https://glama.ai/mcp/connectors/io.github.fahimk/reviewbot). Ownership is verified. The dedicated synthetic OAuth test profile is authenticated, and Glama's Test Connection check reported Healthy on 2026-11-09 at 18:01 UTC. The public listing shows Healthy and all four expected tools. The isolated profile is retained for ongoing health checks; it contains no customer data. No manual duplicate submission is needed. The listing points to the existing hosted service and does not imply that its backend is open source.
 
 ## Repository transfer
 
