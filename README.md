@@ -53,7 +53,7 @@ For a direct MCP connection, merge this entry into the `mcpServers` object in yo
 
 Complete ReviewBot OAuth in Cursor, then ask which apps are accessible. A direct MCP connection adds tools only. To test the bundled skills as a local plugin, copy this repository's package files into `~/.cursor/plugins/local/reviewbot-app-reviews`, reload Cursor, and check **Customize** for the server and both skills. Local plugin imports must be permitted by your organization's settings. Follow Cursor's [local testing guide](https://cursor.com/docs/plugins#test-plugins-locally); a symlink pointing outside its local plugin folder is not supported.
 
-Cursor host testing and Marketplace submission are pending. Do not interpret package compatibility as a published listing or a completed OAuth test. Maintainers can use the [Cursor and Glama submission handoff](docs/cursor-glama-submission.md).
+Cursor host testing is pending. Marketplace submission is on hold until Cursor clarifies whether ReviewBot's required paid or trial account is permitted by its [Publisher Terms, section 3.1](https://cursor.com/marketplace-publisher-terms). Package-format compatibility does not establish commercial eligibility, a published listing, or a completed OAuth test. See the [Cursor and Glama submission handoff](docs/cursor-glama-submission.md).
 
 ## Tools and workflows
 

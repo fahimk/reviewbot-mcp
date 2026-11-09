@@ -4,7 +4,7 @@ ReviewBot App Reviews uses the plugin identifier `reviewbot-app-reviews` in the 
 
 | File | Consumer |
 | --- | --- |
-| `plugin.json` | Portable Agent Plugins identity, accepted by Cursor, with OpenAI listing/review metadata. |
+| `plugin.json` | Portable Agent Plugins identity in a format supported by Cursor, with OpenAI listing/review metadata. |
 | `mcp.json` | Canonical Agent Plugins 1.0.0 remote connection, including Cursor's portable-plugin path. |
 | `.claude-plugin/plugin.json` | Claude plugin identity. |
 | `.claude-plugin/marketplace.json` | Single-plugin Claude marketplace from the public repository. |
@@ -22,7 +22,7 @@ The OpenAI manifest intentionally omits reviewer credentials, reviewer-only inst
 
 ## Cursor and Glama
 
-Cursor accepts the existing portable package. This documentation update does not modify its manifests, skills, version 0.1.0 release tag, or published archives. Cursor-specific components are unnecessary for these two skills and one remote server. Actual Cursor import and OAuth behavior still need host testing; see the [submission handoff](cursor-glama-submission.md).
+Cursor supports the existing portable package format. This documentation update does not modify its manifests, skills, version 0.1.0 release tag, or published archives. Cursor-specific components are unnecessary for these two skills and one remote server. Actual Cursor import and OAuth behavior still need host testing, and Marketplace commercial eligibility needs clarification before submission; see the [submission handoff](cursor-glama-submission.md).
 
 Glama's hosted-endpoint connector route points to the existing service. It does not require a runtime package or imply that the hosted backend is open source. Its authenticated test profile is separate from public listing metadata.
 

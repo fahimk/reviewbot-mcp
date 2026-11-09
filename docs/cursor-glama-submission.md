@@ -26,7 +26,9 @@ Suggested long description:
 
 ## Cursor
 
-Submit the public repository URL through [Cursor's publisher form](https://cursor.com/marketplace/publish). The repository already contains the root Agent Plugins manifest, canonical `mcp.json`, two skills, MIT-licensed package code/documentation, and a committed logo. The service's backend is not included in that license or repository. ReviewBot branding retains its existing license exclusion.
+**Eligibility clarification required before submission.** [Cursor's Publisher Terms](https://cursor.com/marketplace-publisher-terms), checked 2026-11-09, include MCP servers in the Plugin definition (§1.6) and prohibit direct or indirect user fees for Marketplace plugin access or use (§3.1). ReviewBot requires an eligible paid or trial account. No explicit SaaS-subscription exception was found in the official terms or plugin documentation. Obtain written clarification before accepting the publisher terms or submitting; other listed services do not establish an exception for ReviewBot. The terms identify `legal@cursor.com` as the publisher contact (§12.6). No clarification request has been sent.
+
+If eligibility is confirmed and host tests pass, submit the public repository URL through [Cursor's publisher form](https://cursor.com/marketplace/publish). The repository contains the root Agent Plugins manifest, canonical `mcp.json`, two skills, MIT-licensed package code/documentation, and a committed logo. The service's backend is not included in that license or repository. ReviewBot branding retains its existing license exclusion.
 
 Follow the [official submission checklist](https://cursor.com/docs/reference/plugins#submission-checklist). The existing portable format is supported, so a second `.cursor-plugin/plugin.json` is unnecessary. The [README](../README.md#cursor) describes direct connection and local package testing.
 
