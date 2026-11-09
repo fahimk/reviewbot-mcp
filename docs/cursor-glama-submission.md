@@ -1,6 +1,6 @@
 # Cursor and Glama submission handoff
 
-Prepared 2026-11-09. Neither listing has been submitted. These channels use the existing hosted service and public integration package. The version 0.1.0 release and its archives remain unchanged.
+Updated 2026-11-09. Cursor has not been submitted. Glama has automatically imported the official registry entry; its listing is public and searchable, with ownership verification and authenticated health checks pending. These channels use the existing hosted service and public integration package. The version 0.1.0 release and its archives remain unchanged.
 
 ## Listing fields
 
@@ -43,10 +43,10 @@ No Cursor host test, new OAuth grant, publisher agreement acceptance, or Marketp
 
 ## Glama
 
-Use [Connectors](https://glama.ai/mcp/connectors) → **Add Server → Hosted endpoint** with the fields above. The GitHub link identifies integration metadata and documentation, not the hosted backend source.
+Manage the [existing ReviewBot connector](https://glama.ai/mcp/connectors/io.github.fahimk/reviewbot), imported from the official MCP Registry. It is already public and searchable. Do not create a duplicate through Add Server. The fields above are prepared for maintaining this entry; the GitHub link identifies integration metadata and documentation, not the hosted backend source.
 
 The [official FAQ](https://glama.ai/mcp/faq#how-do-i-submit-an-mcp-connector) requires a dedicated test profile. Configure **Admin → Test Profile → OAuth 2.0** with an isolated synthetic account, no customer data, and no billable operations. Dynamic registration alone does not authorize the user. Keep credentials out of public fields, support chat, and this repository.
 
-Health checks initialize and list metadata without invoking tools or reading resource contents. Listings become public and searchable when healthy; authenticated failures remain pending. A continuing test grant may be needed, so this is separate from a temporary demo connection.
+Health checks initialize and list metadata without invoking tools or reading resource contents. The observed ReviewBot entry is public despite its unhealthy status; its failed checks report unauthorized access. Public discoverability and successful authenticated health checks are separate states. A continuing test grant may be needed, so this is separate from a temporary demo connection.
 
-Check for an existing registry import before creating a duplicate. Claim ownership through the matching GitHub identity (`fahimk`) or Glama's domain/endpoint proof. Use only Glama's actual proof token. No identity connection, credentials, verification file, or OAuth grant is included here.
+The maintainer's GitHub-linked Glama account has been created with authorization. The ownership claim is waiting for the endpoint verification file to be deployed; a dedicated OAuth test profile remains to be configured. Use only Glama's actual proof token for verification. Keep account credentials and OAuth tokens out of this repository.
