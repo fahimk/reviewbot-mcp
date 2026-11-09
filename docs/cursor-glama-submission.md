@@ -1,6 +1,6 @@
 # Cursor and Glama submission handoff
 
-Updated 2026-11-09. Cursor has not been submitted. Glama has automatically imported the official registry entry; its listing is public and searchable, with ownership verification and authenticated health checks pending. These channels use the existing hosted service and public integration package. The version 0.1.0 release and its archives remain unchanged.
+Updated 2026-11-09. Cursor has not been submitted. Glama has automatically imported the official registry entry; its listing is public and searchable, with ownership verified and authenticated health checks pending. These channels use the existing hosted service and public integration package. The version 0.1.0 release and its archives remain unchanged.
 
 ## Listing fields
 
@@ -10,7 +10,7 @@ Updated 2026-11-09. Cursor has not been submitted. Glama has automatically impor
 | Plugin identifier | `reviewbot-app-reviews` |
 | Short description | Search collected App Store and Google Play reviews, summarize customer feedback, and draft grounded replies. |
 | Homepage and setup | https://reviewbot.io/mcp/ |
-| Public integration repository | https://github.com/fahimk/reviewbot-mcp |
+| Public integration repository | https://github.com/reviewbot-io/reviewbot-mcp |
 | Logo | `assets/icon.png` in the repository |
 | MCP endpoint | `https://api.reviewbot.io/mcp` |
 | Transport | Streamable HTTP |
@@ -26,7 +26,7 @@ Suggested long description:
 
 ## Cursor
 
-**Eligibility clarification pending before submission.** [Cursor's Publisher Terms](https://cursor.com/marketplace-publisher-terms), checked 2026-11-09, include MCP servers in the Plugin definition (§1.6) and prohibit direct or indirect user fees for Marketplace plugin access or use (§3.1). ReviewBot requires an eligible paid or trial account. No explicit SaaS-subscription exception was found in the official terms or plugin documentation. Obtain written clarification before accepting the publisher terms or submitting; other listed services do not establish an exception for ReviewBot. A clarification email was sent with authorization on 2026-11-09 at 17:37 UTC to the publisher contact, `legal@cursor.com`, with `marketplace-publishing@cursor.com` copied. No response or approval has been received.
+**Eligibility clarification pending before submission.** [Cursor's Publisher Terms](https://cursor.com/marketplace-publisher-terms), checked 2026-11-09, include MCP servers in the Plugin definition (§1.6) and prohibit direct or indirect user fees for Marketplace plugin access or use (§3.1). ReviewBot requires an eligible paid or trial account. No explicit SaaS-subscription exception was found in the official terms or plugin documentation. Obtain written clarification before accepting the publisher terms or submitting; other listed services do not establish an exception for ReviewBot. A clarification email was sent with authorization on 2026-11-09 at 17:37 UTC to the publisher contact, `legal@cursor.com`, with `marketplace-publishing@cursor.com` copied. The original request was sent from the maintainer's personal address and has not been resent. Future publisher correspondence uses `fahim@reviewbot.io`. No response or approval has been received.
 
 If eligibility is confirmed and host tests pass, submit the public repository URL through [Cursor's publisher form](https://cursor.com/marketplace/publish). The repository contains the root Agent Plugins manifest, canonical `mcp.json`, two skills, MIT-licensed package code/documentation, and a committed logo. The service's backend is not included in that license or repository. ReviewBot branding retains its existing license exclusion.
 
@@ -49,4 +49,4 @@ The [official FAQ](https://glama.ai/mcp/faq#how-do-i-submit-an-mcp-connector) re
 
 Health checks initialize and list metadata without invoking tools or reading resource contents. The observed ReviewBot entry is public despite its unhealthy status; its failed checks report unauthorized access. Public discoverability and successful authenticated health checks are separate states. A continuing test grant may be needed, so this is separate from a temporary demo connection.
 
-The maintainer's GitHub-linked Glama account has been created with authorization. The endpoint verification change has been merged and is awaiting the normal CI deployment; the ownership claim and a dedicated OAuth test profile remain pending. Use only Glama's actual proof token for verification. Keep account credentials and OAuth tokens out of this repository.
+The maintainer's GitHub-linked Glama account was created with authorization, the endpoint proof was deployed through the normal CI path, and ownership is verified. The OAuth test profile is blocked pending confirmation of Glama's callback URL. A request for callback confirmation was sent to Glama on 2026-11-09 from `fahim@reviewbot.io`; no successful authenticated health check is recorded. Keep account credentials and OAuth tokens out of this repository.

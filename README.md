@@ -27,7 +27,7 @@ claude plugin validate /absolute/path/to/reviewbot-mcp
 claude --plugin-dir /absolute/path/to/reviewbot-mcp
 ```
 
-Complete connection authorization in the host before calling tools. Add the included marketplace with `/plugin marketplace add fahimk/reviewbot-mcp`, followed by `/plugin install reviewbot-app-reviews@reviewbot-app-reviews`. Complete the ReviewBot OAuth flow to connect the live endpoint.
+Complete connection authorization in the host before calling tools. Add the included marketplace with `/plugin marketplace add reviewbot-io/reviewbot-mcp`, followed by `/plugin install reviewbot-app-reviews@reviewbot-app-reviews`. Complete the ReviewBot OAuth flow to connect the live endpoint.
 
 ### ChatGPT and Codex
 
